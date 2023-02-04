@@ -15,14 +15,15 @@ public class Tower : MonoBehaviour
     
     void Update()
     {
-        var enemies = FindObjectsOfType<Enemy>();
-        var target = enemies
-            .Where(x => Vector3.Distance(x.transform.position, transform.position) < range)
-            .OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).FirstOrDefault();
-        if (target)
-        {
-            ShootTarget(target);
-        }
+        // var enemies = FindObjectsOfType<Enemy>();
+        // var target = enemies
+        //     .Where(x => Vector3.Distance(x.transform.position, transform.position) < range)
+        //     .OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).FirstOrDefault();
+        // if (target)
+        // {
+        //     ShootTarget(target);
+        // }
+        Debug.Log(Camera.main.WorldToScreenPoint(transform.position).x / Screen.width);
     }
 
     private void ShootTarget(Enemy target)

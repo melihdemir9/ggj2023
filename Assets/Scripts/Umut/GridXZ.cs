@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using CodeMonkey.Utils;
 
@@ -42,10 +43,12 @@ public class GridXZ <TGridObject> // Generic class to create grid in XZ axis
             TextMesh[,] debugTextArray = new TextMesh[width, height]; // 2D array of TextMesh components to display grid units
 
             for (int x = 0; x < gridArray.GetLength(0); x++) {
-                for (int z = 0; z < gridArray.GetLength(1); z++) {
+                for (int z = 0; z < gridArray.GetLength(1); z++)
+                {
+                    Color color = Color.white;
                     debugTextArray[x, z] = UtilsClass.CreateWorldText(gridArray[x, z]?.ToString(), null, GetWorldPosition(x, z) + new Vector3(cellSizeX/2, -0.91f, cellSizeZ/2) , 8, Color.white, TextAnchor.MiddleCenter, TextAlignment.Center);
-                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z + 1), Color.white, 100f)  ;
-                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
+                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z + 1), color, 100f)  ;
+                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), color, 100f);
                 }
             }
             Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);

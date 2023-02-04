@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
@@ -8,31 +9,35 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Grid grid;
-    private List<Square> path;
     private float currentSpeed;
     [NonSerialized] public bool isSlowed;
-    private Square currentFrom, currentTo;
+    private GridCoord currentFrom, currentTo;
+    private int stepCount = 1;
     
     public void StartMoving()
     {
-        currentSpeed = grid.baseEnemySpeed;
-        if (!grid) return;
-        path = grid.GetPath();
-        currentFrom = grid.spawnLocation;
-        currentTo = path[path.IndexOf(grid.spawnLocation) + 1];
+        currentSpeed = GameManager.Instance.BaseEnemySpeed;
+        currentFrom = GameManager.Instance.Path[0];
+        currentTo = GameManager.Instance.Path[1];
         MoveRecursive(currentFrom, currentTo);
     }
 
-    public void MoveRecursive(Square start, Square finish)
+    public void MoveRecursive(GridCoord start, GridCoord finish)
     {
-        transform.position = start.transform.position;
-        transform.DOMove(finish.transform.position, currentSpeed).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() =>
+        transform.position = GridBuildingSystem.Instance.grid.GetWorldPosition(start.x, start.z);
+        stepCount++;
+        transform.DOMove(GridBuildingSystem.Instance.grid.GetWorldPosition(finish.x, finish.z), currentSpeed)
+            .SetSpeedBased()
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
         {
-            transform.SetParent(finish.transform);
-            if (finish.isDestination) return;
+            if (GameManager.Instance.Path.Last() == finish)
+            {
+                //damage
+                return;
+            }
             currentFrom = currentTo;
-            currentTo = path[path.IndexOf(finish) + 1];
+            currentTo = GameManager.Instance.Path[stepCount];
             MoveRecursive(currentFrom, currentTo);
         });
     }
@@ -44,13 +49,19 @@ public class Enemy : MonoBehaviour
         StartCoroutine(slowTimer());
         currentSpeed /= 2f;
         transform.DOKill();
-        transform.DOMove(currentTo.transform.position, currentSpeed).SetSpeedBased().SetEase(Ease.Linear).OnComplete(
+        transform.DOMove(GridBuildingSystem.Instance.grid.GetWorldPosition(currentTo.x, currentTo.z), currentSpeed)
+            .SetSpeedBased()
+            .SetEase(Ease.Linear)
+            .OnComplete(
             () =>
             {
-                transform.SetParent(currentTo.transform);
-                if (currentTo.isDestination) return;
+                if (GameManager.Instance.Path.Last() == currentTo)
+                {
+                    //damage
+                    return;
+                }
                 currentFrom = currentTo;
-                currentTo = path[path.IndexOf(currentTo) + 1];
+                currentTo = GameManager.Instance.Path[stepCount];
                 MoveRecursive(currentFrom, currentTo);
             });
     }
@@ -58,7 +69,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator slowTimer()
     {
         yield return new WaitForSeconds(2f);
-        currentSpeed = grid.baseEnemySpeed;
+        currentSpeed = GameManager.Instance.BaseEnemySpeed;
         isSlowed = false;
     }
 }

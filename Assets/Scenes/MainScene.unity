@@ -152,6 +152,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0cdab43bed85342b0a64ece86b8751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Path:
+  - x: 3
+    z: 0
+  - x: 3
+    z: 1
+  - x: 3
+    z: 2
+  - x: 3
+    z: 3
+  - x: 2
+    z: 3
+  - x: 1
+    z: 3
+  - x: 1
+    z: 4
+  - x: 1
+    z: 5
+  - x: 1
+    z: 6
+  - x: 1
+    z: 7
+  - x: 1
+    z: 8
+  - x: 2
+    z: 8
+  - x: 3
+    z: 8
+  - x: 4
+    z: 8
+  - x: 4
+    z: 9
+  - x: 4
+    z: 10
+  - x: 4
+    z: 11
+  - x: 4
+    z: 12
+  - x: 4
+    z: 13
+  - x: 3
+    z: 13
+  - x: 3
+    z: 14
+  - x: 2
+    z: 14
+  - x: 2
+    z: 15
+  - x: 2
+    z: 16
+  BaseEnemySpeed: 7
+  EnemyPrefabs:
+  - {fileID: 1414411966133552703, guid: 84e6b551b60e7954d91bfb6567c497d6, type: 3}
+  - {fileID: 3279780130563232785, guid: 4d12a7a008efdda48a6966c23665c40e, type: 3}
+  SpawnedEnemies: []
 --- !u!4 &6535401
 Transform:
   m_ObjectHideFlags: 0
@@ -3361,6 +3415,7 @@ GameObject:
   - component: {fileID: 1973503565}
   - component: {fileID: 1973503564}
   - component: {fileID: 1973503563}
+  - component: {fileID: 1973503566}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -3444,6 +3499,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973503561}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1973503566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973503561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221ce73b622f2824ca8f4eb0431bac3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  projectilePrefab: {fileID: 0}
+  chargeTime: 3
+  charging: 0
+  projectileSpeed: 1
 --- !u!1 &2006581068
 GameObject:
   m_ObjectHideFlags: 0

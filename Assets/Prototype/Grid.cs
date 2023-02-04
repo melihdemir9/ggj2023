@@ -11,8 +11,6 @@ public class Grid : MonoBehaviour
 
     public Square spawnLocation;
 
-    public float baseEnemySpeed = 1f;
-
     public void Start()
     {
         spawnLocation = squares.SelectMany(x => x.array).FirstOrDefault(x => x.isStart);
@@ -40,7 +38,6 @@ public class Grid : MonoBehaviour
     {
         var newEnemy = Instantiate(EnemyPrefab, spawnLocation.transform.position, 
             Quaternion.identity, spawnLocation.transform).GetComponent<Enemy>();
-        newEnemy.grid = this;
         newEnemy.StartMoving();
     }
 
