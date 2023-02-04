@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GateGem
+  m_Shader: {fileID: 4800000, guid: 9a1fb64ed819dab4182d5e803aef0759, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortionTexture:
+        m_Texture: {fileID: 2800000, guid: 66d49682907f22141a3e32a31d312c7c, type: 3}
+        m_Scale: {x: 0.95, y: 0.39}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTexture:
+        m_Texture: {fileID: 2800000, guid: 48709f3ac7166f94c8561aa994d85efd, type: 3}
+        m_Scale: {x: 0.38, y: 0.57}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _BaseMax: 1
+    - _BaseMin: 0.7
+    - _BaseSpeed: -0.03
+    - _DeepPower: -0.3
+    - _DistortionPower: 0.1
+    - _DistortionSpeed: 0.07
+    - _FadeMax: 0.02
+    - _Float0: 2.71
+    - _Float1: 0.501
+    - _FoamDiff: -0.1
+    - _FoamDist: 0.85
+    - _FoamMultiplier: 1.5
+    - _FoamSpeed: -0.02
+    - _FoamSpeed1: 1
+    - _FoamStep: 0.2
+    - _FoamStep2: 0.57
+    - _FoamStrength: 1
+    - _FoamW: 1.65
+    - _Foamparam: -0.15
+    - _GroundShadow: 0
+    - _SecondaryMax: 1
+    - _SecondaryMin: 0.5
+    - _SecondarySpeed: -0.01
+    - _ShorePower: 2.4
+    - _ShoreSpeed: 0.5
+    - _ShoreSpeed1: 0.5
+    - _Speed: 1
+    - _SunMargin: 0.75
+    - _SunMargin1: 0.6
+    - _SunReflection: 0.15
+    - _SunReflection1: 4
+    - _SunWavePower: 3
+    - _ValueGroundShadow: 0
+    - _ValueGroundShadow1: 0
+    - _WaveDensityThreshold: 0.6
+    - _WaveDepth: 0.08
+    - _WaveDepth2: 0
+    - _WaveFoamSpeed: 0.5
+    - _WaveMultiplier: 2
+    - _WavePower: -0.81
+    - _WaveReflectionPower: 0.1
+    - _X: 0.53
+    - _f1: 0
+    - _f2: 0
+    - _floattt: 0
+    m_Colors:
+    - _BaseColor: {r: 0.8875815, g: 0.29930574, b: 0.8962264, a: 0.89411765}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0.4295283, g: 0.3042453, b: 0.5, a: 1}
+    - _ColorGroundShadow: {r: 0.4295283, g: 0.3042453, b: 0.5, a: 1}
+    - _ColorGroundShadow1: {r: 1, g: 1, b: 1, a: 1}
+    - _DistortionPower: {r: 0.2, g: 1, b: 0, a: 0}
+    - _FoamColor: {r: 0.6792453, g: 0.17557846, b: 0.5829561, a: 1}
+    - _FoamDistortionPower: {r: 0.25, g: 0.25, b: 0, a: 0}
+    - _SunCenter: {r: 0.5, g: 0.9, b: 0, a: 0}
+    - _SunCenter1: {r: 0.5, g: 0.9, b: 0, a: 0}
+    - _SunReflectionColor: {r: 0.2188096, g: 1, b: 0, a: 1}
+    - _SunReflectionColor1: {r: 1, g: 0.9669812, b: 0.5990566, a: 1}
+    - _WaveColor: {r: 0.42714897, g: 0.735849, b: 0.2179779, a: 1}
+  m_BuildTextureStacks: []

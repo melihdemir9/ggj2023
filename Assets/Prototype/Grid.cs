@@ -11,6 +11,8 @@ public class Grid : MonoBehaviour
 
     public Square spawnLocation;
 
+    public float baseEnemySpeed = 1f;
+
     public void Start()
     {
         spawnLocation = squares.SelectMany(x => x.array).FirstOrDefault(x => x.isStart);
