@@ -5383,5 +5383,9 @@ PrefabInstance:
       propertyPath: chargeTime
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5871890016957816263, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}

@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
     public GameObject projectilePrefab;
     public float chargeTime = 3f;
     public bool charging;
+    public float projectileSpeed = 1f;
     
     void Update()
     {
@@ -28,8 +29,8 @@ public class Tower : MonoBehaviour
     {
         if (charging) return;
         charging = true;
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
-        projectile.transform.DOMove(target.transform.position, 0.1f).SetEase(Ease.Linear).OnComplete(() =>
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, target.transform);
+        projectile.transform.DOLocalMove(Vector3.zero, 1 / projectileSpeed).SetEase(Ease.Linear).OnComplete(() =>
         {
             DOTween.Sequence().AppendInterval(chargeTime).OnComplete(() => charging = false);
             Destroy(projectile);
