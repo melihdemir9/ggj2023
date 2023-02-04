@@ -34,7 +34,12 @@ public class Tower : MonoBehaviour
         {
             DOTween.Sequence().AppendInterval(chargeTime).OnComplete(() => charging = false);
             Destroy(projectile);
-            Destroy(target.gameObject);
+            
+            //Type 1: Damage (destroy)
+            //Destroy(target.gameObject);
+            
+            //Type 2: Slow
+            target.SlowDownMovement();
         });
     }
 
