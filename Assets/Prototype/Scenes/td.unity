@@ -3368,6 +3368,7 @@ MonoBehaviour:
     - {fileID: 1290676224}
   EnemyPrefab: {fileID: 685959825329207600, guid: 54d62c8a5fdd29e4eb452530191c5828, type: 3}
   spawnLocation: {fileID: 0}
+  baseEnemySpeed: 10
 --- !u!4 &1514574083
 Transform:
   m_ObjectHideFlags: 0
@@ -5337,7 +5338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871890016957816260, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.16
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 5871890016957816260, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5382,6 +5383,10 @@ PrefabInstance:
     - target: {fileID: 5871890016957816263, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
       propertyPath: chargeTime
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871890016957816263, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
+      propertyPath: projectileSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0eb3096403ffb4a8220c3b581a4d95, type: 3}
