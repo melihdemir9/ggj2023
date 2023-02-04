@@ -55,7 +55,7 @@ public class Grid : MonoBehaviour
         {
             Square currentClosestSquare = squares
                 .SelectMany(x => x.array)
-                .FirstOrDefault(x => x.Class == SquareClass.Path 
+                .FirstOrDefault(x => x.Class == CellType.Path 
                                      && !path.Contains(x)
                                      && Math.Abs(x.x - currentSquare.x) + Math.Abs(x.y - currentSquare.y) == 1);
             path.Add(currentClosestSquare);

@@ -10,7 +10,8 @@ public class GridCell
     public PlacedUnit placedUnit;
     
     public Transform transform;
-    
+
+    public CellType cellType;
 
 
     public GridCell(GridXZ<GridCell> grid, int x, int z)
