@@ -10,9 +10,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float currentSpeed;
+    
     [NonSerialized] public bool isSlowed;
     private GridCoord currentFrom, currentTo;
     private int stepCount = 1;
+    [SerializeField] private EnemySO enemySO;
     
     public void StartMoving()
     {
@@ -71,5 +73,11 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2f);
         currentSpeed = GameManager.Instance.BaseEnemySpeed;
         isSlowed = false;
+    }
+
+    private void OnDestroy()
+    {
+        ScoringManager.Instance.addGold(enemySO.goldReward);
+        GameManager.Instance.SpawnedEnemies.Remove(this);
     }
 }
