@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 814bb71db3f63bc49a6a33cc2a7afc7f
+guid: b18eec6cafc56c54297fd7a3c93bbc9b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,10 +7,10 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 63394061f11d4324396c8eb50bf111ba, type: 2}
+      name: Fire
+    second: {fileID: 2100000, guid: 49abc93debcd1444e94f79003a4fb82d, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

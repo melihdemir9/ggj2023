@@ -30,9 +30,14 @@ ModelImporter:
   - first:
       74: -3952357168845446041
     second: Bug2|SphereAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bug2
+    second: {fileID: 2100000, guid: 24f63e8afe57e0848a32fe90d4228c17, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
