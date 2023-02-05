@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Square : MonoBehaviour
 {
-    public SquareClass Class;
+    public CellType Class;
     public int x;
     public int y;
     public bool isStart;
@@ -15,13 +15,13 @@ public class Square : MonoBehaviour
     {
         switch (Class)
         {
-            case SquareClass.Empty:
+            case CellType.Empty:
                 Gizmos.color = Color.green;
                 break;
-            case SquareClass.Obstacle:
+            case CellType.Obstacle:
                 Gizmos.color = Color.red;
                 break;
-            case SquareClass.Path:
+            case CellType.Path:
                 Gizmos.color = Color.yellow;
                 break;
         }
@@ -29,7 +29,7 @@ public class Square : MonoBehaviour
     }
 }
 
-public enum SquareClass
+public enum CellType
 {
     Empty,
     Obstacle,
