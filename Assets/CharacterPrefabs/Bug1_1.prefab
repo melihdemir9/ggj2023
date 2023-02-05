@@ -707,7 +707,7 @@ Transform:
   m_GameObject: {fileID: 914178068036905757}
   m_LocalRotation: {x: -0.00000009735359, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2883, y: 1.2883, z: 1.2883}
   m_Children:
   - {fileID: 8414374567284144380}
   - {fileID: 960939527486562808}
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 2260923431154704775}
   - component: {fileID: 3556877595239540117}
   m_Layer: 0
-  m_Name: Bug1
+  m_Name: Bug1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1039,8 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515d0cc95c07ef343995cc94264227c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySo: {fileID: 11400000, guid: 656c0ee5690abaa4e91a2fada580eed9, type: 2}
-  currentHealth: 0
 --- !u!1 &1432563446501722336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,7 +3374,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 237c63323bc49634a8fc3e46ab9fc729, type: 2}
+  - {fileID: 2100000, guid: 4ffad80ada0a896419ed0d9f0cbba891, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
