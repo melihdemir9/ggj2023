@@ -9,10 +9,6 @@ public class TowerSO : ScriptableObject
     public GameObject towerPrefab;
     public GameObject projectilePrefab;
     
-    [Header("Charging")]
-    public float chargeTime;
-    public bool charging;
-    
     [Header("Base Values")]
     public float range;
     public float damage;
@@ -31,6 +27,7 @@ public class TowerSO : ScriptableObject
 }
 public enum EffectType
 {
+    None,
     RapidPiercing,
     Slow,
     Chain,

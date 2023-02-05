@@ -16,6 +16,6 @@ MonoBehaviour:
   enemyID: 1
   health: 20
   goldReward: 10
-  speed: 1
+  speed: 9
   size: 2
   damage: 5

@@ -14,11 +14,18 @@ public class Enemy : MonoBehaviour
     [NonSerialized] public bool isSlowed;
     private GridCoord currentFrom, currentTo;
     private int stepCount = 1;
-    [SerializeField] private EnemySO enemySO;
+    [SerializeField] private EnemySO enemySo;
+    public float currentHealth;
+
+    public void Init()
+    {
+        currentHealth = enemySo.health;
+        currentSpeed = enemySo.speed > 0 ? enemySo.speed : GameManager.Instance.BaseEnemySpeed;
+        StartMoving();
+    }
     
     public void StartMoving()
     {
-        currentSpeed = GameManager.Instance.BaseEnemySpeed;
         currentFrom = GameManager.Instance.Path[0];
         currentTo = GameManager.Instance.Path[1];
         MoveRecursive(currentFrom, currentTo);
@@ -42,6 +49,12 @@ public class Enemy : MonoBehaviour
             currentTo = GameManager.Instance.Path[stepCount];
             MoveRecursive(currentFrom, currentTo);
         });
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if(currentHealth < 0) onDeath();
     }
 
     public void SlowDownMovement()
@@ -75,9 +88,11 @@ public class Enemy : MonoBehaviour
         isSlowed = false;
     }
 
-    private void OnDestroy()
+    private void onDeath()
     {
-        ScoringManager.Instance.addGold(enemySO.goldReward);
+        transform.DOKill();
+        //ScoringManager.Instance.addGold(enemySo.goldReward);
         GameManager.Instance.SpawnedEnemies.Remove(this);
+        Destroy(gameObject);
     }
 }

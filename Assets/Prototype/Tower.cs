@@ -12,18 +12,36 @@ public class Tower : MonoBehaviour
     public float chargeTime = 3f;
     public bool charging;
     public float projectileSpeed = 1f;
+    public TowerSO towerSo;
+    public EffectType effectType;
+    public float damage;
+
+    public void Init()
+    {
+        chargeTime = 1 / towerSo.attackSpeed;
+        projectilePrefab = towerSo.projectilePrefab;
+        range = towerSo.range;
+        damage = towerSo.damage;
+        effectType = towerSo.effectType;
+    }
     
     void Update()
     {
-        // var enemies = FindObjectsOfType<Enemy>();
-        // var target = enemies
-        //     .Where(x => Vector3.Distance(x.transform.position, transform.position) < range)
-        //     .OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).FirstOrDefault();
-        // if (target)
-        // {
-        //     ShootTarget(target);
-        // }
-        //Debug.Log(Camera.main.WorldToScreenPoint(transform.position).x / Screen.width);
+        var availableTargets = GameManager.Instance.SpawnedEnemies.Where(
+            x => GetScreenDistance(x.transform.position, transform.position) < range);
+        if (availableTargets.Any())
+        {
+            ShootTarget(availableTargets.FirstOrDefault());
+        }
+    }
+
+    private float GetScreenDistance(Vector3 worldPos1, Vector3 worldPos2)
+    {
+        var pos1 = Camera.main.WorldToScreenPoint(worldPos1);
+        var pos2 = Camera.main.WorldToScreenPoint(worldPos2);
+        var distVector = (pos1 - pos2);
+        distVector.Scale(new Vector3((float)Math.Pow(Screen.width, -1), (float)Math.Pow(Screen.height, -1), 0));
+        return distVector.magnitude;
     }
 
     private void ShootTarget(Enemy target)
@@ -35,17 +53,16 @@ public class Tower : MonoBehaviour
         {
             DOTween.Sequence().AppendInterval(chargeTime).OnComplete(() => charging = false);
             Destroy(projectile);
-            
-            //Type 1: Damage (destroy)
-            //Destroy(target.gameObject);
-            
-            //Type 2: Slow
-            target.SlowDownMovement();
+            switch (effectType)
+            {
+                case EffectType.Slow:
+                    target.SlowDownMovement();
+                    target.TakeDamage(damage);
+                    break;
+                default:
+                    target.TakeDamage(damage);
+                    break;
+            }
         });
-    }
-
-    private void OnDrawGizmos()
-    {
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, range);
     }
 }

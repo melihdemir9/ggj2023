@@ -20,7 +20,7 @@ public class GameManager : MonoSingleton<GameManager>
             Quaternion.identity)
             .GetComponent<Enemy>();
         SpawnedEnemies.Add(newEnemy);
-        newEnemy.StartMoving();
+        newEnemy.Init();
     }
     
     private void OnGUI()

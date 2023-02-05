@@ -23,45 +23,6 @@ public class Grid : MonoBehaviour
             }
         }
     }
-
-    //debug
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 50, 50), "Spawn"))
-        {
-            Spawn();
-        }
-    }
-
-
-    public void Spawn()
-    {
-        var newEnemy = Instantiate(EnemyPrefab, spawnLocation.transform.position, 
-            Quaternion.identity, spawnLocation.transform).GetComponent<Enemy>();
-        newEnemy.StartMoving();
-    }
-
-    public List<Square> GetPath()
-    {
-        var path = new List<Square>();
-        path.Add(spawnLocation);
-        bool notFoundDestination = true;
-        var currentSquare = spawnLocation;
-
-        while (notFoundDestination)
-        {
-            Square currentClosestSquare = squares
-                .SelectMany(x => x.array)
-                .FirstOrDefault(x => x.Class == CellType.Path 
-                                     && !path.Contains(x)
-                                     && Math.Abs(x.x - currentSquare.x) + Math.Abs(x.y - currentSquare.y) == 1);
-            path.Add(currentClosestSquare);
-            notFoundDestination = !currentClosestSquare.isDestination;
-            currentSquare = currentClosestSquare;
-        }
-
-        return path;
-    }
 }
 
 [Serializable]
