@@ -23,7 +23,7 @@ public class Tower : MonoBehaviour
         // {
         //     ShootTarget(target);
         // }
-        Debug.Log(Camera.main.WorldToScreenPoint(transform.position).x / Screen.width);
+        //Debug.Log(Camera.main.WorldToScreenPoint(transform.position).x / Screen.width);
     }
 
     private void ShootTarget(Enemy target)

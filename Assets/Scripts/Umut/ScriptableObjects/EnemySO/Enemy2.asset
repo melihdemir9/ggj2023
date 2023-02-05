@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89c5f2f4fd6b0c4a8f3cc946c8f8cd7, type: 3}
   m_Name: Enemy2
   m_EditorClassIdentifier: 
-  enemyID: 0
-  health: 0
-  goldReward: 0
-  speed: 0
-  size: 0
-  damage: 0
+  enemyPrefab: {fileID: 0}
+  enemyID: 2
+  health: 80
+  goldReward: 15
+  speed: 0.8
+  size: 3
+  damage: 11

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff487b8e41d73494c859ffc24738569b, type: 3}
   m_Name: ElectricTower
   m_EditorClassIdentifier: 
-  towerID: 3
+  towerID: 2
   towerPrefab: {fileID: 0}
   projectilePrefab: {fileID: 0}
   chargeTime: 3.2
@@ -23,7 +23,6 @@ MonoBehaviour:
   effectType: 0
   buyCost: 100
   upgradeCost: 160
-  isUpgraded: 0
   rangeUpgradedValue: 3
   damageUpgradedValue: 33
   chargingUpgradedValue: 3

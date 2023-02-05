@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff487b8e41d73494c859ffc24738569b, type: 3}
   m_Name: IceTower
   m_EditorClassIdentifier: 
-  towerID: 2
-  towerPrefab: {fileID: 0}
+  towerID: 1
+  towerPrefab: {fileID: 989298886576559000, guid: 306ca206a9d434c49a7cc9bf30314b54, type: 3}
   projectilePrefab: {fileID: 0}
   chargeTime: 1.5
   charging: 0
@@ -23,7 +23,6 @@ MonoBehaviour:
   effectType: 0
   buyCost: 70
   upgradeCost: 110
-  isUpgraded: 0
   rangeUpgradedValue: 3.4
   damageUpgradedValue: 14
   chargingUpgradedValue: 1.3

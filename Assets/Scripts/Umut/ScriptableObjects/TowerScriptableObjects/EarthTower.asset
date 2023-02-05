@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff487b8e41d73494c859ffc24738569b, type: 3}
   m_Name: EarthTower
   m_EditorClassIdentifier: 
-  towerID: 4
+  towerID: 3
   towerPrefab: {fileID: 0}
   projectilePrefab: {fileID: 0}
   chargeTime: 3.5
@@ -23,7 +23,6 @@ MonoBehaviour:
   effectType: 3
   buyCost: 125
   upgradeCost: 220
-  isUpgraded: 0
   rangeUpgradedValue: 3.8
   damageUpgradedValue: 30
   chargingUpgradedValue: 3

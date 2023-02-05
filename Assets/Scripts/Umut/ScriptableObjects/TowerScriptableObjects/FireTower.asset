@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff487b8e41d73494c859ffc24738569b, type: 3}
   m_Name: FireTower
   m_EditorClassIdentifier: 
-  towerID: 1
+  towerID: 0
   towerPrefab: {fileID: 0}
   projectilePrefab: {fileID: 0}
   chargeTime: 1.5
@@ -23,7 +23,6 @@ MonoBehaviour:
   effectType: 0
   buyCost: 70
   upgradeCost: 110
-  isUpgraded: 0
   rangeUpgradedValue: 3.4
   damageUpgradedValue: 9
   chargingUpgradedValue: 1.3
