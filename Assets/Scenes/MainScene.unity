@@ -201,7 +201,7 @@ MonoBehaviour:
     z: 15
   - x: 2
     z: 16
-  BaseEnemySpeed: 7
+  BaseEnemySpeed: 2
   EnemyPrefabs:
   - {fileID: 1414411966133552703, guid: 84e6b551b60e7954d91bfb6567c497d6, type: 3}
   - {fileID: 3279780130563232785, guid: 4d12a7a008efdda48a6966c23665c40e, type: 3}

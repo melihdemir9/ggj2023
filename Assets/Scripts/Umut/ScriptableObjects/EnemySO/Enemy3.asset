@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff487b8e41d73494c859ffc24738569b, type: 3}
-  m_Name: IceTower
+  m_Script: {fileID: 11500000, guid: e89c5f2f4fd6b0c4a8f3cc946c8f8cd7, type: 3}
+  m_Name: Enemy3
   m_EditorClassIdentifier: 
-  towerID: 1
-  range: 5
-  towerPrefab: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  chargeTime: 3
-  charging: 0
+  enemyID: 0
+  health: 0
+  goldReward: 0
+  speed: 0
+  size: 0
+  damage: 0
