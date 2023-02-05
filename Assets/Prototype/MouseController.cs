@@ -58,7 +58,7 @@ public class MouseController : MonoBehaviour
         line.SetPositions(new []{startPoint, endPoint});
         Mesh mesh = new Mesh();
         line.BakeMesh(mesh, Camera.main);
-        SetPolygonCollider3D.UpdatePolygonCollider2D(mesh, line.GetComponent<PolygonCollider2D>());
+        //SetPolygonCollider3D.UpdatePolygonCollider2D(mesh, line.GetComponent<PolygonCollider2D>());
     }
 
     public void ResetLinePoints()
