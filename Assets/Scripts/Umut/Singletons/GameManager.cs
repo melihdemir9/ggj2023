@@ -33,7 +33,7 @@ public class GameManager : MonoSingleton<GameManager>
         newEnemy.Init();
     }
     
-    private void OnGUI()
+    /*private void OnGUI()
     {
         for (int i = 0; i < EnemyPrefabs.Length; i++)
         {
@@ -43,7 +43,7 @@ public class GameManager : MonoSingleton<GameManager>
             }
         }
 
-    }
+    }*/
 }
 
 [Serializable]

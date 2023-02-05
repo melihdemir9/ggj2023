@@ -13,7 +13,8 @@ public class TowerBuyButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        towerRing.InitBuy(() => Destroy(gameObject));
+        Vector3 ground = new Vector3(transform.position.x, 0, transform.position.z);
+        towerRing.InitBuy(ground, () => Destroy(gameObject));
         towerRing.ToggleOn();
     }
 

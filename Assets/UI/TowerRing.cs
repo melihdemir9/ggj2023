@@ -13,9 +13,11 @@ public class TowerRing : MonoBehaviour
     public GameObject blueTowerPrefab;
 
     private Action _buySuccess;
+    private Vector3 _spawnPos;
 
-    public void InitBuy(Action buySuccess)
+    public void InitBuy(Vector3 spawnPos, Action buySuccess)
     {
+        _spawnPos = spawnPos;
         _buySuccess = buySuccess;
         TopRightButton.onClick.AddListener(BuildRedTower);
         BottomLeftButton.onClick.AddListener(BuildBlueTower);
@@ -23,7 +25,7 @@ public class TowerRing : MonoBehaviour
     
     private void BuildRedTower()
     {
-        var newTower = Instantiate(redTowerPrefab, transform.position, Quaternion.identity).GetComponent<Tower>();
+        var newTower = Instantiate(redTowerPrefab, _spawnPos, Quaternion.identity).GetComponent<Tower>();
         newTower.Init();        
         ToggleOff();
         _buySuccess();
@@ -31,7 +33,7 @@ public class TowerRing : MonoBehaviour
     
     private void BuildBlueTower()
     {
-        var newTower = Instantiate(blueTowerPrefab, transform.position, Quaternion.identity).GetComponent<Tower>();
+        var newTower = Instantiate(blueTowerPrefab, _spawnPos, Quaternion.identity).GetComponent<Tower>();
         newTower.Init();
         ToggleOff();
         _buySuccess();

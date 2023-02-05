@@ -21,7 +21,7 @@ public class Tower : MonoBehaviour
         chargeTime = 1 / towerSo.attackSpeed;
         projectilePrefab = towerSo.projectilePrefab;
         projectileSpeed = towerSo.projectileSpeed;
-        range = towerSo.range;
+        range = towerSo.range * (float)Math.Pow(Screen.height, -0.3f);
         damage = towerSo.damage;
         effectType = towerSo.effectType;
     }
