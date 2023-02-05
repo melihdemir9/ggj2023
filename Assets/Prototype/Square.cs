@@ -34,4 +34,5 @@ public enum CellType
     Empty,
     Obstacle,
     Path,
+    Tower
 }

@@ -6,7 +6,7 @@ public class PlacedUnit : MonoBehaviour
 {   
     public static PlacedUnit Create(Vector3 worldPosition, Vector2Int origin, TowerSO placedUnitSo)
     {
-        GameObject placedUnitTransform = Instantiate(placedUnitSo.projectilePrefab, worldPosition, Quaternion.identity);
+        GameObject placedUnitTransform = Instantiate(placedUnitSo.towerPrefab, worldPosition, Quaternion.identity);
         PlacedUnit placedUnit = placedUnitTransform.GetComponent<PlacedUnit>();
         placedUnit.origin = origin;
         placedUnit.placedUnitSO = placedUnitSo;
