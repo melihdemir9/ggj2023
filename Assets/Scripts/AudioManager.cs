@@ -36,7 +36,6 @@ public class AudioManager : MonoBehaviour
         _singleSource.clip = SoundsDictionary[soundName];
         _singleSource.Play();
     }
-
     public void StopSingle()
     {
         _singleSource.Stop();
@@ -44,7 +43,16 @@ public class AudioManager : MonoBehaviour
 
     public void LoopSound(string soundName, float volume = 1f)
     {
-        if (PlayerPrefs.GetInt("musicOn", 1) == 1)
+        _loopSource.volume = volume;
+        _loopSource.loop = true;
+        _loopSource.clip = SoundsDictionary[soundName];
+        _loopSource.Play();
+    }
+
+    /*
+     public void LoopSound(string soundName, float volume = 1f)
+    {
+        if (PlayerPrefs.GetInt("musicOn", 1) == 1)  // buradaki musicOn bir yerde SetInt edilmiyor
         {
             _loopSource.volume = volume;
             _loopSource.loop = true;
@@ -55,8 +63,9 @@ public class AudioManager : MonoBehaviour
         {
             _loopSource.Stop();
         }
-    }
+    } 
 
+     */
     public void StopLoop()
     {
         _loopSource.Stop();
