@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4508279957067414751}
   - component: {fileID: 666386687693894522}
   - component: {fileID: 3376446691755149232}
+  - component: {fileID: 7155600635643712211}
   m_Layer: 0
   m_Name: Shock_tower
   m_TagString: Untagged
@@ -81,3 +82,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7155600635643712211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3880818721013655141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221ce73b622f2824ca8f4eb0431bac3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  projectilePrefab: {fileID: 0}
+  chargeTime: 3
+  charging: 0
+  projectileSpeed: 10
+  towerSo: {fileID: 11400000, guid: fbac6c1bf63180c4e8b477bd9efdda1c, type: 2}
+  effectType: 2
+  damage: 0

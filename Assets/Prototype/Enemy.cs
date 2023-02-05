@@ -43,6 +43,9 @@ public class Enemy : MonoBehaviour
             if (GameManager.Instance.Path.Last() == finish)
             {
                 //damage
+                transform.DOKill();
+                GameManager.Instance.SpawnedEnemies.Remove(this);
+                Destroy(gameObject);
                 return;
             }
             currentFrom = currentTo;
@@ -54,7 +57,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        if(currentHealth < 0) onDeath();
+        if(currentHealth <= 0) onDeath();
     }
 
     public void SlowDownMovement()
@@ -91,7 +94,7 @@ public class Enemy : MonoBehaviour
     private void onDeath()
     {
         transform.DOKill();
-        //ScoringManager.Instance.addGold(enemySo.goldReward);
+        ScoringManager.Instance.addGold(enemySo.goldReward);
         GameManager.Instance.SpawnedEnemies.Remove(this);
         Destroy(gameObject);
     }

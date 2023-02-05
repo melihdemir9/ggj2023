@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerID: 1
   towerPrefab: {fileID: 989298886576559000, guid: 306ca206a9d434c49a7cc9bf30314b54, type: 3}
-  projectilePrefab: {fileID: 0}
-  chargeTime: 1.5
-  charging: 0
-  range: 3.2
-  damage: 6
-  attackSpeed: 1.5
-  effectType: 0
+  projectilePrefab: {fileID: 6657099254641518175, guid: 3d40106a4d760dc40bf11faa76df605e, type: 3}
+  range: 1
+  damage: 4
+  attackSpeed: 3
+  projectileSpeed: 20
+  effectType: 2
   buyCost: 70
   upgradeCost: 110
   rangeUpgradedValue: 3.4

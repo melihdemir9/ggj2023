@@ -13,6 +13,7 @@ public class TowerSO : ScriptableObject
     public float range;
     public float damage;
     public float attackSpeed;
+    public float projectileSpeed;
     public EffectType effectType;
     
     [Header("Costs")]

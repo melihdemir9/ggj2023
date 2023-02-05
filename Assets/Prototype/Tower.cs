@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [Range(1, 5)] public float range;
+    public float range;
     public GameObject projectilePrefab;
     public float chargeTime = 3f;
     public bool charging;
-    public float projectileSpeed = 1f;
+    public float projectileSpeed = 10f;
     public TowerSO towerSo;
     public EffectType effectType;
     public float damage;
@@ -20,6 +20,7 @@ public class Tower : MonoBehaviour
     {
         chargeTime = 1 / towerSo.attackSpeed;
         projectilePrefab = towerSo.projectilePrefab;
+        projectileSpeed = towerSo.projectileSpeed;
         range = towerSo.range;
         damage = towerSo.damage;
         effectType = towerSo.effectType;
@@ -48,10 +49,10 @@ public class Tower : MonoBehaviour
     {
         if (charging) return;
         charging = true;
+        DOTween.Sequence().AppendInterval(chargeTime).OnComplete(() => charging = false);
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, target.transform);
-        projectile.transform.DOLocalMove(Vector3.zero, 1 / projectileSpeed).SetEase(Ease.Linear).OnComplete(() =>
+        projectile.transform.DOLocalMove(Vector3.zero, projectileSpeed).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() =>
         {
-            DOTween.Sequence().AppendInterval(chargeTime).OnComplete(() => charging = false);
             Destroy(projectile);
             switch (effectType)
             {

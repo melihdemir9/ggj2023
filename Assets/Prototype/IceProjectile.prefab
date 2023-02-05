@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8509120783387817830}
   - component: {fileID: 2378638749668446264}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: IceProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49abc93debcd1444e94f79003a4fb82d, type: 2}
+  - {fileID: 2100000, guid: ea931ab1d3f935147bb549026c9ecd84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

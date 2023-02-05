@@ -98,7 +98,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   chargeTime: 3
   charging: 0
-  projectileSpeed: 1
+  projectileSpeed: 10
   towerSo: {fileID: 11400000, guid: 9fc157c5efaab394ba9c46d24e3fef04, type: 2}
   effectType: 0
   damage: 0

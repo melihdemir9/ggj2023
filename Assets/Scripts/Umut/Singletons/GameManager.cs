@@ -13,6 +13,16 @@ public class GameManager : MonoSingleton<GameManager>
 
     public List<Enemy> SpawnedEnemies;
 
+    private void Awake()
+    {
+        InvokeRepeating("SpawnTest", 2f, 0.5f);
+    }
+
+    public void SpawnTest()
+    {
+        Spawn(0);
+    }
+
     public void Spawn(int EnemyType)
     {
         var newEnemy = Instantiate(EnemyPrefabs[EnemyType],

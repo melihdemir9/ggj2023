@@ -15,9 +15,10 @@ MonoBehaviour:
   towerID: 0
   towerPrefab: {fileID: 0}
   projectilePrefab: {fileID: 6657099254641518175, guid: 3f073c83ffa0f7b4ca07694237658f20, type: 3}
-  range: 3.2
-  damage: 5
-  attackSpeed: 1.5
+  range: 1
+  damage: 10
+  attackSpeed: 3
+  projectileSpeed: 20
   effectType: 0
   buyCost: 70
   upgradeCost: 110
